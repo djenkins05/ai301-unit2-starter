@@ -1,53 +1,52 @@
 # Evidence guide: where proof lives in a reproduction package
 
-<!--
-THIS IS THE PART YOU WRITE (new this week: Unit 1 handed you this file
-finished; the scaffolding fades). The skill uses this guide as its map:
-for every kind of proof a rubric check names, this file says WHERE to
-find it in a package and WHAT GOOD LOOKS LIKE when you do.
-
-Under each family heading below, write:
-
-- Where it lives: the exact places to look. In an eval bundle (which
-  section of the package: the issue context, the repo-facts block, the
-  claim comment, the repro report and its parts). In live mode (where
-  on GitHub or in the draft: the issue thread, the repo's docs, the
-  student's draft comment).
-- What good looks like: one or two sentences someone else could apply.
-  Prefer observable conditions ("the versions named match what the
-  issue targets, or the difference is called out") over adjectives
-  ("environment is thorough").
-
-A rubric check whose evidence this guide cannot locate is a check
-nobody else can execute; the rubric swap showed you what that feels
-like. Write the map you wish your grader had.
--->
-
 ## Environment
 
-<!-- Where the environment record lives, and what a sufficient one
-looks like against the issue's stated target. -->
+**Where it lives:**
+In eval mode, look in the repro report for the stated operating system, runtime or language version, dependency versions, project version or commit, configuration, and any setup details that affect the reproduction attempt. Read these against the issue context and the repo-facts block to determine which environment details matter for the reported behavior.
+
+In live mode, look at the issue thread for the environment the reporter used, the repository documentation for supported versions or setup requirements, and the student's draft repro comment for the environment they actually tested.
+
+**What good looks like:**
+The report identifies enough of the relevant environment for another person to understand and repeat the attempt. If the tested environment differs from the one named in the issue, the difference is stated clearly enough that a reader can judge whether it may affect the result.
 
 ## Steps
 
-<!-- Where the reproduction steps live, and what makes them followable
-by a stranger, starting state to trigger. -->
+**Where it lives:**
+In eval mode, look in the repro report for the starting state, setup actions, commands, inputs, configuration changes, and sequence of actions used to trigger the reported behavior. Read these against prerequisites or setup requirements stated in the issue context and repo-facts block.
+
+In live mode, compare the issue's reported reproduction steps and repository setup instructions with the steps written in the student's draft repro comment.
+
+**What good looks like:**
+A stranger with access to the project should be able to follow the attempt from the stated starting condition to the observed result without guessing a material command, input, prerequisite, or action. Missing details fail only when they could change or prevent the outcome.
 
 ## Behavior shown
 
-<!-- Where the artifacts live (output excerpts, logs, screenshots),
-and what it means for an artifact to show the issue's behavior rather
-than an adjacent one. -->
+**Where it lives:**
+In eval mode, look at the repro report's recorded artifacts, including terminal output, error messages, logs, return values, screenshots described in the bundle, or other observed results. Compare those artifacts directly with the expected and actual behavior described in the issue context.
+
+In live mode, compare the evidence included in the student's draft repro comment with the behavior described in the issue thread.
+
+**What good looks like:**
+The evidence shows the same behavior the issue reports, rather than a related error, different failure, or nearby problem. A cannot-reproduce result can also pass when the evidence clearly shows what happened instead under the documented attempt.
 
 ## Honesty
 
-<!-- Where claims and their backing meet: how to tell a report that
-says exactly what happened (including an honest cannot-reproduce) from
-one that claims more than its evidence shows. -->
+**Where it lives:**
+In eval mode, compare the repro report's stated conclusion with its environment, steps, and observed artifacts. Pay attention to statements such as "reproduced," "confirmed," "could not reproduce," or claims about the cause.
+
+In live mode, compare the wording in the student's draft repro comment with the results they actually recorded.
+
+**What good looks like:**
+The conclusion says only what the evidence supports. A successful reproduction is backed by evidence of the reported behavior. A cannot-reproduce result is backed by a meaningful documented attempt. Possible causes are not presented as confirmed unless the evidence establishes them.
 
 ## Comms
 
-<!-- Where the words meet the repo: the claim comment against the
-issue, the comments against the repo's stated templates and
-contribution policy (including AI-use disclosure requirements), and
-what specific-and-honest looks like next to boilerplate. -->
+**Where it lives:**
+In eval mode, read the claim comment against the issue title, description, and thread highlights. Read both the claim comment and repro report against the repo-facts block, especially the repository's bug-report requirements, contribution policy, communication rules, templates, and any AI-use or disclosure requirements.
+
+In live mode, read the issue thread, `CONTRIBUTING.md`, contributor documentation, issue or pull-request templates, and any dedicated AI-use policy such as `AI_POLICY.md` or `AI_USAGE_POLICY.md`. Compare those rules with the student's draft claim and repro comments.
+
+**What good looks like:**
+The claim identifies the specific issue or behavior being investigated instead of using generic boilerplate. The comments do not promise an unsupported fix or deadline. They satisfy applicable repository requirements, including required AI-use disclosure or other contribution conditions. If the repository states no such requirement, silence is not treated as a failure. The repro comment should describe the student's own evidence rather than relying on another person's reproduction.
+
